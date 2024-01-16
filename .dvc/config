@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = C:/Users/312350/AppData/Local/Temp/dvc_pipeline_store/
