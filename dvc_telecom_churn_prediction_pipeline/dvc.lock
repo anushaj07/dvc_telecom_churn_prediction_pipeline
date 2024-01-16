@@ -20,3 +20,26 @@ stages:
       md5: 75e86dbf0ce9f985a0da7d69d1b51a42.dir
       size: 151510
       nfiles: 2
+  train:
+    cmd: python source/train.py processed_data/out_train.csv
+    deps:
+    - path: processed_data/out_train.csv
+      hash: md5
+      md5: 902bffc9f9ef8cbcdd8fc4b4596e3ae6
+      size: 121169
+    - path: source/train.py
+      hash: md5
+      md5: 744ef3604febcf9128eb773585c4820a
+      size: 1401
+    params:
+      params.yaml:
+        train.class_weight:
+        train.max_depth: 5
+        train.min_samples_leaf: 1
+        train.min_samples_split: 2
+        train.n_estimators: 200
+    outs:
+    - path: model_dir/model.pkl
+      hash: md5
+      md5: 864e9900112339946ca9b2691923b667
+      size: 839923
